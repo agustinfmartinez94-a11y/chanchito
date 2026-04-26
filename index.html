@@ -1280,12 +1280,12 @@ let lastSyncTime = null;
 
 // Helper: llamar al Apps Script
 function getScriptUrl(){
-  return window._scriptUrl || SCRIPT_URL;
+  window._scriptUrl = window._scriptUrl || localStorage.getItem('chanchito_script_url') || 'https://script.google.com/macros/s/AKfycbwQstEhYmlYEr_ZYeSw9NhUVzGk0s7UIlY3ivHARhX7gTDq7eLaudnUvzc8UsSzHYGb/exec'; return window._scriptUrl;
 }
 
 async function sheetsAPI(action, payload = {}) {
   const url = getScriptUrl();
-  if(url === 'https://script.google.com/macros/s/AKfycbwQstEhYmlYEr_ZYeSw9NhUVzGk0s7UIlY3ivHARhX7gTDq7eLaudnUvzc8UsSzHYGb/exec') throw new Error('Apps Script URL no configurada');
+  if(url === 'TU_APPS_SCRIPT_URL_AQUI') throw new Error('Apps Script URL no configurada');
   const params = new URLSearchParams({ action, ...Object.fromEntries(
     Object.entries(payload).map(([k,v]) => [k, typeof v === 'object' ? JSON.stringify(v) : v])
   )});
@@ -1296,7 +1296,7 @@ async function sheetsAPI(action, payload = {}) {
 
 async function sheetsWrite(action, payload = {}) {
   const url = getScriptUrl();
-  if(url === 'https://script.google.com/macros/s/AKfycbwQstEhYmlYEr_ZYeSw9NhUVzGk0s7UIlY3ivHARhX7gTDq7eLaudnUvzc8UsSzHYGb/exec') throw new Error('Apps Script URL no configurada');
+  if(url === 'TU_APPS_SCRIPT_URL_AQUI') throw new Error('Apps Script URL no configurada');
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain' },
@@ -1425,7 +1425,7 @@ async function loadFromSheets(silent=false){
   if(!silent) toast('🐷 Sincronizando con Google Sheets...','info');
 
   const effectiveUrl = getScriptUrl();
-  if(!effectiveUrl || effectiveUrl === 'https://script.google.com/macros/s/AKfycbwQstEhYmlYEr_ZYeSw9NhUVzGk0s7UIlY3ivHARhX7gTDq7eLaudnUvzc8UsSzHYGb/exec'){
+  if(!effectiveUrl || effectiveUrl === 'TU_APPS_SCRIPT_URL_AQUI'){
     dot.style.background='var(--amber)';
     time.textContent='Sin configurar';
     toast('⚙️ Configurá la URL del Apps Script en Configuración → Google Sheets','warn');
@@ -1950,7 +1950,9 @@ function fillRepCatSel(){
   }
   // Pre-fill config inputs from localStorage
   try{
-    const su=localStorage.getItem('chanchito_script_url');
+    const su=localStorage.getItem('chanchito_script_url') || 'https://script.google.com/macros/s/AKfycbwQstEhYmlYEr_ZYeSw9NhUVzGk0s7UIlY3ivHARhX7gTDq7eLaudnUvzc8UsSzHYGb/exec';
+  localStorage.setItem('chanchito_script_url', su);
+  window._scriptUrl = su;
     const surl=localStorage.getItem('chanchito_sheets_url');
     if(su){
       const el=document.getElementById('script-url');
