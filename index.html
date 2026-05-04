@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chanchito 🐷 — Portal</title>
+<title>Chanchito 🐷 — Agus</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -531,6 +531,13 @@ textarea{resize:vertical;min-height:68px}
       <div class="cat-list" id="cat-list" style="columns:2;column-gap:24px"></div>
     </div>
 
+    <!-- Balance proyectado 12 meses -->
+    <div class="card" style="margin-bottom:14px">
+      <div class="card-hd">
+        <div><div class="card-title">📊 Balance proyectado — próximos 12 meses</div><div class="card-sub">Ingresos estimados − gastos comprometidos (cuotas + eventos)</div></div>
+      </div>
+      <div id="dash-balance-proj" style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:4px"></div>
+    </div>
 
     <!-- Compromisos futuros por cuotas -->
     <div class="card" style="margin-top:14px">
@@ -673,7 +680,7 @@ textarea{resize:vertical;min-height:68px}
         <div id="form-add-ingreso" style="display:none" class="form-grid" style="margin-top:12px">
           <div class="fg"><label class="fl">Descripción</label><input class="fi" id="ei-desc" placeholder="Aguinaldo, bono..."></div>
           <div class="fg"><label class="fl">Monto</label><input class="fi" id="ei-monto" type="number" placeholder="0"></div>
-          <div class="fg"><label class="fl">Mes</label><select class="fs" id="ei-mes"><option value="5">Mayo 2026</option><option value="6">Jun 2026</option><option value="7">Jul 2026</option><option value="8">Ago 2026</option><option value="9">Sep 2026</option><option value="10">Oct 2026</option><option value="11">Nov 2026</option><option value="12">Dic 2026</option></select></div>
+          <div class="fg"><label class="fl">Mes</label><select class="fs" id="ei-mes"><option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option><option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option><option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option></select></div><div class="fg"><label class="fl">Año</label><select class="fs" id="ei-anio"><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option></select></div>
           <div class="fg"><label class="fl">Tipo</label><select class="fs" id="ei-tipo"><option>Aguinaldo</option><option>Bono</option><option>Freelance</option><option>Otro</option></select></div>
           <div class="fg full" style="flex-direction:row;gap:7px;margin-top:4px">
             <button class="btn btn-primary btn-sm" onclick="addEvento('ingreso')">Guardar</button>
@@ -690,7 +697,7 @@ textarea{resize:vertical;min-height:68px}
         <div id="form-add-gasto" style="display:none" class="form-grid">
           <div class="fg"><label class="fl">Descripción</label><input class="fi" id="eg-desc" placeholder="Vacaciones, regalo..."></div>
           <div class="fg"><label class="fl">Monto estimado</label><input class="fi" id="eg-monto" type="number" placeholder="0"></div>
-          <div class="fg"><label class="fl">Mes</label><select class="fs" id="eg-mes"><option value="5">Mayo 2026</option><option value="6">Jun 2026</option><option value="7">Jul 2026</option><option value="8">Ago 2026</option><option value="9">Sep 2026</option><option value="10">Oct 2026</option><option value="11">Nov 2026</option><option value="12">Dic 2026</option></select></div>
+          <div class="fg"><label class="fl">Mes</label><select class="fs" id="eg-mes"><option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option><option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option><option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option></select></div><div class="fg"><label class="fl">Año</label><select class="fs" id="eg-anio"><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option></select></div>
           <div class="fg"><label class="fl">Categoría</label><select class="fs" id="eg-cat"><option>Ocio</option><option>Viaje</option><option>Regalo</option><option>Salud</option><option>Otro</option></select></div>
           <div class="fg full" style="flex-direction:row;gap:7px;margin-top:4px">
             <button class="btn btn-primary btn-sm" onclick="addEvento('gasto')">Guardar</button>
@@ -780,7 +787,7 @@ textarea{resize:vertical;min-height:68px}
           </select>
         </div>
         <div class="fg" id="custom-pct-group" style="display:none">
-          <label class="fl">% Rocío / Compartido</label>
+          <label class="fl">% Agus / Compartido</label>
           <div style="display:flex;gap:7px;align-items:center">
             <input class="fi" id="pct-r" type="number" value="50" style="width:70px" oninput="syncPct('r')">%
             <span style="color:var(--text3)">·</span>
@@ -946,7 +953,7 @@ textarea{resize:vertical;min-height:68px}
           <button class="btn btn-primary btn-sm" onclick="addTag('medio')">＋</button>
         </div>
       </div>
-      <!-- agusS -->
+      <!-- USUARIOS -->
       <div class="config-section">
         <div class="cs-hd">
           <div class="cs-title">👤 Usuarios</div>
@@ -1307,7 +1314,7 @@ async function sheetsWrite(action, payload = {}) {
 }
 
 // CFG se carga desde Sheets — fuente de verdad 100%
-let CFG = { cats: [], medios: [], users: ['Rocío'] };
+let CFG = { cats: [], medios: [], users: ['Agus'] };
 
 function saveCfg() {
   // Guardar categorías y medios en Sheets
@@ -1326,6 +1333,12 @@ let PRESUP_BASE = [];
 
 let eventosIngresos = [];
 let eventosGastos = [];
+// IDs eliminados de proyección — persiste en localStorage
+let eventosEliminados = new Set();
+try {
+  const saved = localStorage.getItem('chanchito_eliminados');
+  if(saved) JSON.parse(saved).forEach(id => eventosEliminados.add(id));
+} catch(e) {}
 
 let charts = {};
 const MESES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
@@ -1451,8 +1464,8 @@ async function loadFromSheets(silent=false){
 
     // Gastos
     if(respG.ok){
-      // GASTOS_ALL guarda todos sin filtro de mes (para cuotas, proyecciones, etc.)
-      GASTOS_ALL = respG.data.map(r=>{
+      // GASTOS_ALL — filtrar los que el usuario eliminó de Proyección
+      GASTOS_ALL = respG.data.filter(r=>!r.id||!eventosEliminados.has(r.id)).map(r=>{
         // 1. Intentar leer cuota_actual/total_cuotas de las columnas
         let ca = r.cuota_actual||'';
         let ct = r.total_cuotas||'';
@@ -1465,9 +1478,9 @@ async function loadFromSheets(silent=false){
         ct = ct ? parseInt(ct) : 0;
 
         // 2. Si no hay cuota en columnas, parsear desde descripción
-        // Formato: "ALGO (cuota 4/12)" o "ALGO (cuota 4/12)"
+        // Formato: "ALGO (cuota 4/12)"
         let monto = parseFloat(r.monto||0);
-        const desc = r.descripcion||'';
+        const desc = String(r.descripcion||'').trim();
         if((!ca || !ct) && desc){
           const m = desc.match(/cuota\s+(\d+)\s*\/\s*(\d+)/i);
           if(m){
@@ -1477,12 +1490,12 @@ async function loadFromSheets(silent=false){
         }
 
         return {
-          id:     r.id||'',
+          id:     String(r.id||''),
           fecha:  r.fecha,
           desc:   desc,
-          cat:    r.categoria,
-          medio:  r.medio_pago,
-          asig:   r.asignado_a,
+          cat:    String(r.categoria||''),
+          medio:  String(r.medio_pago||''),
+          asig:   String(r.asignado_a||''),
           cuotas: ca&&ct?`${ca}/${ct}`:'—',
           cuota_actual: ca||0,
           total_cuotas: ct||0,
@@ -1502,9 +1515,11 @@ async function loadFromSheets(silent=false){
 
     // Ingresos del mes seleccionado
     if(respI.ok){ INGRESOS_CACHE = respI.data; }
-    // Todos los ingresos (sin filtro de mes, para el gráfico histórico)
-    if(respIAll&&respIAll.ok){ INGRESOS_ALL = respIAll.data; }
-    else { INGRESOS_ALL = INGRESOS_CACHE; } // fallback
+    // Todos los ingresos — filtrar los que el usuario eliminó de Proyección
+    if(respIAll&&respIAll.ok){
+      INGRESOS_ALL = respIAll.data.filter(i=>!i.id||!eventosEliminados.has(i.id));
+    }
+    else { INGRESOS_ALL = INGRESOS_CACHE.filter(i=>!i.id||!eventosEliminados.has(i.id)); }
 
     // Categorías
     if(respCat.ok && respCat.data.length){
@@ -1563,7 +1578,7 @@ async function loadFromSheets(silent=false){
 
     // Usuarios desde Sheets
     if(respU&&respU.ok&&respU.data&&respU.data.length){
-      const nombresSheets = respU.data.map(u=>u.nombre||u.name||'').filter(n=>n&&n.toLowerCase()!=='agus'&&n.toLowerCase()!=='agus');
+      const nombresSheets = respU.data.map(u=>u.nombre||u.name||'').filter(n=>n&&n.toLowerCase()!=='agus');
       // Mergear con CFG.users sin duplicar
       nombresSheets.forEach(n=>{ if(!CFG.users.includes(n)) CFG.users.push(n); });
     }
@@ -1573,8 +1588,9 @@ async function loadFromSheets(silent=false){
       const deudasSheets = respDeu.data.map(r=>({
         id:       r.id||'d'+Math.random(),
         tipo:     r.tipo||'me_deben',
-        // 'persona' puede venir como 'tipo.1' si el header de Sheets está mal
-        persona:  r.persona||r['tipo.1']||r.tipo1||'',
+        // La col C es siempre 'persona' aunque el header diga 'tipo' por el bug de Sheets
+        // Intentar múltiples nombres posibles que puede generar normalizeHeaders
+        persona:  r.persona||r['tipo.1']||r['tipo_1']||r.tipo1||r['persona.1']||'',
         monto:    parseFloat(r.monto||0),
         fecha:    r.fecha||'',
         desc:     r.descripcion||r.desc||'',
@@ -1595,7 +1611,7 @@ async function loadFromSheets(silent=false){
     const idsDeudas = new Set(DEUDAS.map(d=>d.desc+'|'+d.monto));
     const gastosCompartidos = GASTOS_ALL.filter(g=>{
       const a = String(g.asig||g.asignado_a||'').trim();
-      return a && a.toLowerCase() !== 'agus' && a.toLowerCase() !== 'agus' && a.toLowerCase().includes('compartido');
+      return a && a.toLowerCase() !== 'agus' && a.toLowerCase().includes('compartido');
     });
     gastosCompartidos.forEach(g=>{
       const asigVal = String(g.asig||g.asignado_a||'').trim();
@@ -1688,16 +1704,22 @@ function onMesSelChange(){
 }
 
 function fillMesSel(){
-  // Construir lista de meses únicos desde GASTOS_CACHE e INGRESOS_CACHE
+  // Construir lista de meses únicos desde GASTOS_ALL (historial completo)
   const mesesSet = new Set();
-  GASTOS_CACHE.forEach(g=>{
+  const allGFill = (GASTOS_ALL && GASTOS_ALL.length) ? GASTOS_ALL : GASTOS_CACHE;
+  allGFill.forEach(g=>{
     const p = String(g.fecha||'').split('/');
     if(p.length===3) mesesSet.add(p[2]+'-'+p[1].padStart(2,'0'));
   });
-  INGRESOS_CACHE.forEach(i=>{
+  const ingSrcFill = (INGRESOS_ALL && INGRESOS_ALL.length) ? INGRESOS_ALL : INGRESOS_CACHE;
+  ingSrcFill.forEach(i=>{
     const p = String(i.fecha||'').split('/');
     if(p.length===3) mesesSet.add(p[2]+'-'+p[1].padStart(2,'0'));
   });
+  // Siempre incluir el mes actual aunque no tenga datos aún
+  const nowFill = new Date();
+  const keyNow = nowFill.getFullYear()+'-'+String(nowFill.getMonth()+1).padStart(2,'0');
+  mesesSet.add(keyNow);
   // Ordenar descendente
   const meses = [...mesesSet].sort((a,b)=>b.localeCompare(a));
   const MESES_NOM = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
@@ -1719,11 +1741,11 @@ function fillMesSel(){
   document.getElementById('tsub').textContent = txt + ' · Agus';
 }
 
-// Calcula el monto que le corresponde al usuario según cómo está asignado el gasto
+// Calcula el monto que le corresponde a Agus según cómo está asignado el gasto
 function montoPropio(g){
   const monto = Math.abs(parseFloat(g.monto||0));
   const asig = String(g.asig||g.asignado_a||'').trim();
-  if(!asig || asig.toLowerCase()==='agus' || asig.toLowerCase()==='agus') return monto;
+  if(!asig || asig.toLowerCase()==='agus') return monto;
   // Compartido 50/50
   const m50 = asig.match(/50\s*\/\s*50/i);
   if(m50) return Math.round(monto / 2);
@@ -1767,22 +1789,39 @@ function updateDashboardMetrics(){
   // ── Pct gastos/ingresos
   const pctGastos = totalIngresos>0 ? Math.round(totalGastos/totalIngresos*100) : (totalGastos>0?100:0);
 
-  // Cuotas: monto mensual comprometido (cuota del mes siguiente, una por grupo)
-  // Buscar cuotas distintas — una línea por grupo de cuotas pendientes
+  // Cuotas: monto mensual comprometido (solo cuotas con pagos futuros reales)
+  const _nowDash = new Date();
+  const mesActualDash = new Date(_nowDash.getFullYear(), _nowDash.getMonth(), 1);
   const cuotasGrupos = {};
   allGastosForCuotas.forEach(g=>{
     const ca=parseInt(g.raw?.cuota_actual||g.cuota_actual||0);
     const ct=parseInt(g.raw?.total_cuotas||g.total_cuotas||0);
-    if(!ca||!ct) return;
+    if(!ca||!ct||ca>=ct) return;
+    const p=String(g.fecha||'').split('/');
+    if(p.length<3) return;
+    const mesBase=new Date(parseInt(p[2]),parseInt(p[1])-1,1);
+    const fUltima=new Date(mesBase.getFullYear(),mesBase.getMonth()+(ct-ca),1);
+    if(fUltima < mesActualDash) return; // ya vencio, ignorar
     const nm=(g.desc||'').replace(/\s*\(cuota.*\)/i,'').trim()||g.id;
-    if(!cuotasGrupos[nm]){
-      cuotasGrupos[nm]={monto:g.monto, ca, ct};
-    } else if(ca > cuotasGrupos[nm].ca){
+    if(!cuotasGrupos[nm]||ca>cuotasGrupos[nm].ca){
       cuotasGrupos[nm]={monto:g.monto, ca, ct};
     }
   });
-  // Solo contar grupos que tienen cuotas restantes
-  const cuotasMensuales = Object.values(cuotasGrupos).filter(g=>g.ca<g.ct).reduce((s,g)=>s+g.monto,0);
+  const cuotasMensuales = Object.values(cuotasGrupos).reduce((s,g)=>s+g.monto,0);
+  // Panel debug visible
+  const _debugRows = allGastosForCuotas.filter(g=>{const ca=parseInt(g.cuota_actual||0),ct=parseInt(g.total_cuotas||0);return ca>0&&ct>0&&ca<ct;}).map(g=>{
+    const p=String(g.fecha||'').split('/');
+    const mesBase=p.length>=3?new Date(parseInt(p[2]),parseInt(p[1])-1,1):null;
+    const ca=parseInt(g.cuota_actual||0),ct=parseInt(g.total_cuotas||0);
+    const fUltima=mesBase?new Date(mesBase.getFullYear(),mesBase.getMonth()+(ct-ca),1):null;
+    const pasa=fUltima?fUltima>=mesActualDash:false;
+    return {desc:g.desc||g.id,ca,ct,fecha:g.fecha,monto:g.monto,fUltimaStr:fUltima?fUltima.toISOString().slice(0,7):'?',pasa};
+  });
+  let _dbPanel=document.getElementById('_debug-cuotas');
+  if(!_dbPanel){_dbPanel=document.createElement('div');_dbPanel.id='_debug-cuotas';_dbPanel.style.cssText='position:fixed;bottom:10px;right:10px;background:#fff;border:2px solid red;border-radius:8px;padding:12px;font-size:11px;font-family:monospace;z-index:9999;max-width:600px;max-height:400px;overflow:auto';document.body.appendChild(_dbPanel);}
+  _dbPanel.innerHTML='<b>DEBUG CUOTAS (mesActual: '+mesActualDash.toISOString().slice(0,7)+')</b><br>'+
+    _debugRows.map(r=>'<span style="color:'+(r.pasa?'green':'red')+'">'+(r.pasa?'✓':'✗')+' '+r.desc+' ('+r.ca+'/'+r.ct+') fecha:'+r.fecha+' fUltima:'+r.fUltimaStr+' monto:'+r.monto+'</span>').join('<br>')+
+    '<br><b>GRUPOS QUE PASAN: '+JSON.stringify(Object.entries(cuotasGrupos).map(([k,v])=>k+' $'+v.monto))+'</b><br><b>TOTAL: $'+cuotasMensuales+'</b>';
 
   // Balance: si no hay ingresos y hay gastos → déficit
   const balanceDisplay = balance < 0 || (totalGastos > 0 && totalIngresos === 0) ? -Math.abs(totalGastos) : balance;
@@ -1827,6 +1866,7 @@ function updateDashboardMetrics(){
   // Refrescar chart presupuesto con datos reales
   refreshPresupChart();
   renderCompromisosFuturos();
+  renderDashBalanceProj();
   // Presupuesto metrics
   const limiteTotal = PRESUP_BASE.reduce((s,p)=>s+p.limite,0);
   const pctPresup   = limiteTotal>0?Math.round(totalGastos/limiteTotal*100):0;
@@ -1870,12 +1910,15 @@ function updateDashboardMetrics(){
     const ingSrc = (INGRESOS_ALL && INGRESOS_ALL.length) ? INGRESOS_ALL : INGRESOS_CACHE;
     const ingPorMes={};
     ingSrc.forEach(i=>{
+      if(i.id && eventosEliminados.has(i.id)) return; // excluir eliminados
       const p=String(i.fecha||'').split('/');
       if(p.length<3) return;
       const k=p[2]+'-'+p[1].padStart(2,'0');
       ingPorMes[k]=(ingPorMes[k]||0)+parseFloat(i.monto||0);
     });
-    const ingVals=Object.values(ingPorMes);
+    // Últimos 3 meses COMPLETOS para el promedio (excluir mes actual incompleto)
+    const keyNowDash = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+    const ingVals=Object.entries(ingPorMes).filter(([k])=>k<keyNowDash).sort((a,b)=>a[0]>b[0]?-1:1).slice(0,3).map(x=>x[1]);
     const ingPromedio=ingVals.length?Math.round(ingVals.reduce((a,b)=>a+b,0)/ingVals.length):0;
 
     // Construir 12 meses: -5 a +6 desde hoy
@@ -1890,19 +1933,51 @@ function updateDashboardMetrics(){
       // Label: mes abreviado, marcar el actual y futuros
       labels12.push(MESES[d.getMonth()]+(isNow?' ◆':isFuture?' →':''));
 
-      // Gastos reales (solo pasado y mes actual)
-      const gMes = isFuture ? 0 :
-        allG.filter(g=>{const p=String(g.fecha||'').split('/');return p.length>=3&&p[2]+'-'+p[1].padStart(2,'0')===kG;}).reduce((s,g)=>s+montoPropio(g),0);
+      // Gastos reales (pasado/actual) o cuotas+eventos (futuro)
+      // "Real" = mes <= mes actual del sistema (no proyectados futuros)
+      const mesNumActual = now.getFullYear()*12 + now.getMonth();
+      const mesNumD = d.getFullYear()*12 + d.getMonth();
+      const isPastOrNow = mesNumD <= mesNumActual;
+      const gMesReal = isPastOrNow
+        ? allG.filter(g=>{
+            const p=String(g.fecha||'').split('/');
+            if(p.length<3) return false;
+            if(p[2]+'-'+p[1].padStart(2,'0')!==kG) return false;
+            // Excluir gastos marcados como "Proyectado" (cargados desde Proyección)
+            return g.medio!=='Proyectado' && String(g.notas||'').indexOf('Proyección')===-1;
+          }).reduce((s,g)=>s+montoPropio(g),0)
+        : 0;
+      const evGMes = eventosGastos.filter(e=>{
+        const ey=e.anio||now.getFullYear();
+        return ey===d.getFullYear()&&e.mes===d.getMonth()+1;
+      }).reduce((s,e)=>s+e.monto,0);
+      const cuotasGMes = isFuture ? (cuotasPorMes[kG]||0) : 0;
+      // Para mes actual: real + cuotas que caen ese mes
+      // Para pasado: solo real
+      // Para futuro: cuotas + eventos proyectados
+      const isCurrentMonth = mesNumD === mesNumActual;
+      let gMes;
+      if(isCurrentMonth){
+        gMes = gMesReal + (cuotasPorMes[kG]||0) + evGMes;
+      } else if(isPastOrNow){
+        gMes = gMesReal;
+      } else {
+        gMes = cuotasGMes + evGMes;
+      }
       gastData.push(gMes);
 
-      // Ingresos: real si existe en el historial, promedio si es futuro
+      // Ingresos: real si existe, promedio+eventos si es futuro
+      const evIMes = eventosIngresos.filter(e=>{
+        const ey=e.anio||now.getFullYear(); const em=e.mes;
+        return ey===d.getFullYear()&&em===d.getMonth()+1;
+      }).reduce((s,e)=>s+e.monto,0);
       const iMes = isFuture
-        ? (ingPorMes[kG] || ingPromedio)  // futuro: usar real si ya cargó, sino promedio
-        : (ingPorMes[kG] || 0);           // pasado/actual: siempre del historial real
+        ? (ingPorMes[kG]||ingPromedio)+evIMes
+        : (ingPorMes[kG]||0);
       ingData.push(iMes);
 
-      // Cuotas futuras comprometidas
-      cuotasFutData.push(isFuture ? (cuotasPorMes[kG]||0) : 0);
+      // Cuotas futuras (para la barra naranja) — incluir mes actual también
+      cuotasFutData.push((isFuture || isCurrentMonth) ? (cuotasPorMes[kG]||0) : 0);
     }
 
     charts.ivg.data.labels = labels12;
@@ -1929,7 +2004,7 @@ function fillSelects(){
   if(fasig){
     let opts='<option value="agus">Agus (solo mío)</option>';
     // Usuarios configurados
-    const usersToShow = CFG.users.filter(u=>u&&u.toLowerCase()!=='agus'&&u.toLowerCase()!=='agus');
+    const usersToShow = CFG.users.filter(u=>u&&u.toLowerCase()!=='agus');
     usersToShow.forEach(u=>{
       const slug=u.toLowerCase().replace(/\s+/g,'_');
       opts+=`<option value="compartido_${slug}">Compartido con ${u} (50/50)</option>`;
@@ -2055,7 +2130,7 @@ function openEditGasto(id){
   document.getElementById('f-fecha').value = fechaToInput(g.fecha);
   document.getElementById('f-cat').value   = g.cat||'';
   document.getElementById('f-medio').value = g.medio||'';
-  document.getElementById('f-asig').value  = g.asig||'rocio';
+  document.getElementById('f-asig').value  = g.asig||'agus';
   document.getElementById('f-notas').value = g.notas||'';
   document.getElementById('f-edit-id').value = id;
   document.getElementById('f-cuotas').selectedIndex = 0;
@@ -2212,24 +2287,58 @@ function renderProj(){
   const allGProj=(GASTOS_ALL&&GASTOS_ALL.length)?GASTOS_ALL:GASTOS_CACHE;
   const gastosPorMes={};
   allGProj.forEach(g=>{
+    if(g.id && eventosEliminados.has(g.id)) return;
+    const esProyectadoG = String(g.notas||'').includes('Proyeccion') || g.medio==='Proyectado';
+    if(esProyectadoG){
+      const pad=n=>String(n).padStart(2,'0');
+      const enListaG = eventosGastos.some(ev=>{
+        const f='01/'+pad(ev.mes)+'/'+ev.anio;
+        return (ev.sheetsId&&ev.sheetsId===g.id)||(g.desc===ev.desc&&g.fecha===f);
+      });
+      if(!enListaG) return;
+    }
     const p=String(g.fecha||'').split('/');
     if(p.length<3)return;
     const k=p[2]+'-'+p[1].padStart(2,'0');
     gastosPorMes[k]=(gastosPorMes[k]||0)+montoPropio(g);
   });
-  const mesesConDatos=Object.values(gastosPorMes);
+  // Últimos 3 meses COMPLETOS (excluir el mes actual que está incompleto)
+  const now2 = new Date();
+  const keyActual2 = now2.getFullYear()+'-'+String(now2.getMonth()+1).padStart(2,'0');
+  const mesesConDatos=Object.entries(gastosPorMes)
+    .filter(([k])=>k<keyActual2)  // solo meses pasados completos
+    .sort((a,b)=>a[0]>b[0]?-1:1)
+    .slice(0,3)
+    .map(x=>x[1]);
   const promedioGasto=mesesConDatos.length?Math.round(mesesConDatos.reduce((a,b)=>a+b,0)/mesesConDatos.length):0;
   // Ingresos desde INGRESOS_ALL
   const ingSrcProj=(INGRESOS_ALL&&INGRESOS_ALL.length)?INGRESOS_ALL:INGRESOS_CACHE;
   const ingPorMes={};
   ingSrcProj.forEach(i=>{
+    // Excluir eliminados y excluir proyectados que no están en eventosIngresos activos
+    if(i.id && eventosEliminados.has(i.id)) return;
+    const esProyectado = String(i.notas||'').includes('Proyeccion') || i.tipo==='Proyectado';
+    if(esProyectado){
+      // Solo incluir si sigue en la lista activa de eventosIngresos
+      const pad=n=>String(n).padStart(2,'0');
+      const enLista = eventosIngresos.some(ev=>{
+        const f='01/'+pad(ev.mes)+'/'+ev.anio;
+        return (ev.sheetsId&&ev.sheetsId===i.id)||(i.descripcion===ev.desc&&i.fecha===f);
+      });
+      if(!enLista) return;
+    }
     const p=String(i.fecha||'').split('/');
     if(p.length<3)return;
     const k=p[2]+'-'+p[1].padStart(2,'0');
     ingPorMes[k]=(ingPorMes[k]||0)+parseFloat(i.monto||0);
   });
-  const ingMeses=Object.values(ingPorMes);
-  const promedioIng=ingMeses.length?Math.round(ingMeses.reduce((a,b)=>a+b,0)/ingMeses.length):0;
+  // Últimos 3 meses COMPLETOS de ingresos (excluir mes actual incompleto)
+  const ingMesesSort = Object.entries(ingPorMes)
+    .filter(([k])=>k<keyActual2)
+    .sort((a,b)=>a[0]>b[0]?-1:1)
+    .slice(0,3)
+    .map(x=>x[1]);
+  const promedioIng = ingMesesSort.length ? Math.round(ingMesesSort.reduce((a,b)=>a+b,0)/ingMesesSort.length) : 0;
   // Construir n meses desde el mes seleccionado
   const projLabels=[],projGastos=[],projIng=[];
   for(let i=0;i<n;i++){
@@ -2253,33 +2362,43 @@ function renderProj(){
   container.style.gridTemplateColumns=`repeat(${cols},1fr)`;
   container.innerHTML=projGastos.slice(0,cols).map((v,i)=>{
     const pct=Math.round(v/max*100);
-    const color=v>180000?'var(--red)':v>150000?'var(--amber)':'var(--green)';
+    const gColor=v>180000?'var(--red)':v>150000?'var(--amber)':'var(--green)';
+    const ing=projIng[i]||0;
+    const bal=ing-v;
+    const balColor=bal>=0?'var(--green)':'var(--red)';
     const d=new Date(anioSelPj,mesSelPj-1+i,1);
     const evMes=d.getMonth()+1;
     const hasEv=eventosGastos.some(e=>e.mes===evMes)||eventosIngresos.some(e=>e.mes===evMes);
     const isHoy=d.getFullYear()===anioHoyPj&&d.getMonth()+1===mesHoyPj;
     return `<div class="proj-m ${isHoy?'hoy':''}">
       <div class="proj-m-nm">${projLabels[i]}</div>
-      <div class="proj-m-v" style="color:${color}">$${(v/1000).toFixed(0)}k</div>
-      ${hasEv?`<div class="proj-m-tag">📌 evento</div>`:''}
-      <div class="proj-m-bar"><div class="proj-m-fill" style="width:${pct}%;background:${color}"></div></div>
+      <div style="font-size:10px;color:var(--text3);margin-bottom:1px">Gasto</div>
+      <div class="proj-m-v" style="color:${gColor};font-size:12px">${fmtM(v)}</div>
+      ${ing>0?`<div style="font-size:10px;color:var(--text3);margin-top:4px">Ingreso</div><div style="font-size:12px;font-weight:700;color:var(--blue)">${fmtM(ing)}</div>`:''}
+      ${ing>0?`<div style="font-size:10px;color:var(--text3);margin-top:4px">Balance</div><div style="font-size:12px;font-weight:700;color:${balColor}">${bal>=0?'+':''}${fmtM(Math.abs(bal))}</div>`:''}
+      ${hasEv?`<div class="proj-m-tag" style="margin-top:4px">📌 evento</div>`:''}
+      <div class="proj-m-bar" style="margin-top:6px"><div class="proj-m-fill" style="width:${pct}%;background:${gColor}"></div></div>
     </div>`;
   }).join('');
 
   // Cuotas
-  // Cuotas comprometidas desde GASTOS_CACHE — gastos con cuota_actual < total_cuotas
+  // Cuotas comprometidas desde GASTOS_ALL (historial completo)
+  const allGCuotas = (GASTOS_ALL && GASTOS_ALL.length) ? GASTOS_ALL : GASTOS_CACHE;
   const cuotasMap = {};
-  GASTOS_CACHE.forEach(g=>{
+  const mesNm=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const mesActualInicio = new Date(now.getFullYear(), now.getMonth(), 1);
+  allGCuotas.forEach(g=>{
     const ca=parseInt(g.cuota_actual||g.raw?.cuota_actual||0);
     const ct=parseInt(g.total_cuotas||g.raw?.total_cuotas||0);
     if(!ca||!ct||ca>=ct) return;
     const nm = (g.desc||g.descripcion||'').replace(/\s*\(cuota.*\)/i,'').trim();
     if(!cuotasMap[nm]||ca>cuotasMap[nm].ca){
-      // Calcular fecha estimada de última cuota
       const p=String(g.fecha||'').split('/');
       const fBase = p.length>=3 ? new Date(parseInt(p[2]),parseInt(p[1])-1,1) : new Date();
+      // La última cuota cae en fBase + (ct - ca) meses
       const fFin = new Date(fBase.getFullYear(),fBase.getMonth()+(ct-ca),1);
-      const mesNm=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+      // Filtrar: si la última cuota ya pasó (antes del mes actual), ignorar
+      if(fFin < mesActualInicio) return;
       cuotasMap[nm]={nm,ca,ct,monto:g.monto,pct:Math.round(ca/ct*100),hasta:mesNm[fFin.getMonth()]+' '+fFin.getFullYear()};
     }
   });
@@ -2305,51 +2424,183 @@ function renderProj(){
 function renderEventos(){
   const listI=document.getElementById('eventos-ingresos');
   const listG=document.getElementById('eventos-gastos');
-  listI.innerHTML=eventosIngresos.length?eventosIngresos.map((e,i)=>`
-    <div class="evento"><div class="evento-icon">${e.icon||'💰'}</div>
-    <div class="evento-info"><div class="evento-nm">${e.desc}</div><div class="evento-fecha">${MESES[e.mes-1]} 2026 · ${e.tipo}</div></div>
-    <div class="evento-monto amt-pos">+$${e.monto.toLocaleString('es-AR')}</div>
-    <button class="evento-del" onclick="delEvento('ingreso',${i})">✕</button></div>`).join('')
-    :'<div class="empty" style="padding:14px"><div class="empty-icon">💸</div><div>Sin ingresos futuros cargados</div></div>';
-  listG.innerHTML=eventosGastos.length?eventosGastos.map((e,i)=>`
-    <div class="evento"><div class="evento-icon">${e.icon||'💸'}</div>
-    <div class="evento-info"><div class="evento-nm">${e.desc}</div><div class="evento-fecha">${MESES[e.mes-1]} 2026 · ${e.cat}</div></div>
-    <div class="evento-monto amt-neg">-$${e.monto.toLocaleString('es-AR')}</div>
-    <button class="evento-del" onclick="delEvento('gasto',${i})">✕</button></div>`).join('')
-    :'<div class="empty" style="padding:14px"><div class="empty-icon">🏖</div><div>Sin gastos futuros cargados</div></div>';
+  if(listI) listI.innerHTML=eventosIngresos.length ? eventosIngresos.map((e,i)=>`
+    <div class="evento">
+      <div class="evento-icon">${e.icon||'💰'}</div>
+      <div class="evento-info">
+        <div class="evento-nm">${e.desc}</div>
+        <div class="evento-fecha">${MESES[(e.mes||1)-1]} ${e.anio||''} · ${e.tipo||''}</div>
+      </div>
+      <div class="evento-monto amt-pos">+$${(e.monto||0).toLocaleString('es-AR')}</div>
+      <button class="evento-del" onclick="delEvento('ingreso',${i})">✕</button>
+    </div>`).join('')
+    : '<div class="empty" style="padding:14px"><div class="empty-icon">💸</div><div>Sin ingresos futuros cargados</div></div>';
+  if(listG) listG.innerHTML=eventosGastos.length ? eventosGastos.map((e,i)=>`
+    <div class="evento">
+      <div class="evento-icon">${e.icon||'💸'}</div>
+      <div class="evento-info">
+        <div class="evento-nm">${e.desc}</div>
+        <div class="evento-fecha">${MESES[(e.mes||1)-1]} ${e.anio||''} · ${e.cat||''}</div>
+      </div>
+      <div class="evento-monto amt-neg">-$${(e.monto||0).toLocaleString('es-AR')}</div>
+      <button class="evento-del" onclick="delEvento('gasto',${i})">✕</button>
+    </div>`).join('')
+    : '<div class="empty" style="padding:14px"><div class="empty-icon">🏖</div><div>Sin gastos futuros cargados</div></div>';
 }
 
 function showAddEvento(tipo){ document.getElementById('form-add-'+tipo).style.display='grid'; }
 function hideEvento(tipo){ document.getElementById('form-add-'+tipo).style.display='none'; }
-function addEvento(tipo){
+
+async function addEvento(tipo){
+  const now = new Date();
+  const anioActual = now.getFullYear();
+  const pad = n=>String(n).padStart(2,'0');
+  const btnGuardar = document.querySelector('#form-add-'+tipo+' button[onclick*="addEvento"]');
+  if(btnGuardar){ btnGuardar.disabled=true; btnGuardar.textContent='Guardando...'; }
+
   if(tipo==='ingreso'){
-    const desc=document.getElementById('ei-desc').value.trim();
-    const monto=parseFloat(document.getElementById('ei-monto').value);
-    const mes=parseInt(document.getElementById('ei-mes').value);
-    const t=document.getElementById('ei-tipo').value;
-    if(!desc||!monto){toast('Completá descripción y monto','warn');return;}
-    eventosIngresos.push({desc,monto,mes,tipo:t,icon:'💰'});
-    document.getElementById('ei-desc').value='';document.getElementById('ei-monto').value='';
+    const desc  = document.getElementById('ei-desc').value.trim();
+    const monto = parseFloat(document.getElementById('ei-monto').value);
+    const mes   = parseInt(document.getElementById('ei-mes').value);
+    const anio  = parseInt(document.getElementById('ei-anio')?.value||anioActual);
+    const t     = document.getElementById('ei-tipo').value;
+    if(!desc||!monto){
+      toast('Completá descripción y monto','warn');
+      if(btnGuardar){ btnGuardar.disabled=false; btnGuardar.textContent='Guardar'; }
+      return;
+    }
+
+    const fecha = '01/'+pad(mes)+'/'+anio;
+    let sheetsId = null;
+
+    try{
+      const resp = await sheetsWrite('addIngreso',{
+        fecha, descripcion:desc, categoria:t,
+        monto, persona:'Agus', tipo:'Proyectado',
+        recurrente:'No', notas:'Proyeccion'
+      });
+      if(resp&&resp.ok){
+        sheetsId = resp.id || null;
+        const nuevoIng = {
+          id: sheetsId||('pi_'+Date.now()),
+          fecha, descripcion:desc, categoria:t,
+          monto, persona:'Agus', tipo:'Proyectado',
+          recurrente:'No', notas:'Proyeccion'
+        };
+        if(INGRESOS_ALL) INGRESOS_ALL.unshift(nuevoIng);
+        INGRESOS_CACHE.unshift(nuevoIng);
+      }
+    }catch(e){ console.warn('addIngreso error:',e); }
+
+    eventosIngresos.push({desc,monto,mes,anio,tipo:t,icon:'💰',sheetsId});
+    document.getElementById('ei-desc').value='';
+    document.getElementById('ei-monto').value='';
     hideEvento('ingreso');
+
   } else {
-    const desc=document.getElementById('eg-desc').value.trim();
-    const monto=parseFloat(document.getElementById('eg-monto').value);
-    const mes=parseInt(document.getElementById('eg-mes').value);
-    const cat=document.getElementById('eg-cat').value;
-    if(!desc||!monto){toast('Completá descripción y monto','warn');return;}
+    const desc  = document.getElementById('eg-desc').value.trim();
+    const monto = parseFloat(document.getElementById('eg-monto').value);
+    const mes   = parseInt(document.getElementById('eg-mes').value);
+    const anio  = parseInt(document.getElementById('eg-anio')?.value||anioActual);
+    const cat   = document.getElementById('eg-cat').value;
+    if(!desc||!monto){
+      toast('Completá descripción y monto','warn');
+      if(btnGuardar){ btnGuardar.disabled=false; btnGuardar.textContent='Guardar'; }
+      return;
+    }
+
+    const fecha = '01/'+pad(mes)+'/'+anio;
+    let sheetsId = null;
     const icons={Viaje:'✈️',Ocio:'🎭',Regalo:'🎁',Salud:'💊',Otro:'📦'};
-    eventosGastos.push({desc,monto,mes,cat,icon:icons[cat]||'📦'});
-    document.getElementById('eg-desc').value='';document.getElementById('eg-monto').value='';
+
+    try{
+      const resp = await sheetsWrite('addGastos',{
+        filas:[{fecha, descripcion:desc, categoria:cat,
+          monto, medio_pago:'Proyectado', asignado_a:'Agus',
+          cuota_actual:'', total_cuotas:'', notas:'Proyeccion'}]
+      });
+      if(resp&&resp.ok){
+        sheetsId = (resp.ids||[])[0]||null;
+        const nuevoG = {
+          id: sheetsId||('pg_'+Date.now()),
+          fecha, desc, cat, medio:'Proyectado',
+          asig:'Agus', cuotas:'—', cuota_actual:0,
+          total_cuotas:0, monto, notas:'Proyeccion'
+        };
+        if(GASTOS_ALL) GASTOS_ALL.unshift(nuevoG);
+      }
+    }catch(e){ console.warn('addGasto error:',e); }
+
+    eventosGastos.push({desc,monto,mes,anio,cat,icon:icons[cat]||'📦',sheetsId});
+    document.getElementById('eg-desc').value='';
+    document.getElementById('eg-monto').value='';
     hideEvento('gasto');
   }
-  renderProj();
-  toast('✓ Evento agregado a la proyección','success');
-}
-function delEvento(tipo,i){
-  if(tipo==='ingreso')eventosIngresos.splice(i,1);
-  else eventosGastos.splice(i,1);
+
+  if(btnGuardar){ btnGuardar.disabled=false; btnGuardar.textContent='Guardar'; }
+  toast('✓ Guardado','success');
   renderEventos();
   renderProj();
+  updateDashboardMetrics();
+}
+
+async function delEvento(tipo,i){
+  if(tipo==='ingreso'){
+    const ev = eventosIngresos[i];
+    if(ev){
+      // Eliminar de Sheets
+      if(ev.sheetsId){
+        try{ await sheetsWrite('delIngreso',{id:ev.sheetsId}); }catch(e){}
+      } else {
+        // Sin sheetsId: buscar por descripción+fecha en INGRESOS_ALL y eliminar
+        const pad=n=>String(n).padStart(2,'0');
+        const fechaBusc='01/'+pad(ev.mes)+'/'+ev.anio;
+        const encontrado = (INGRESOS_ALL||[]).find(x=>
+          x.descripcion===ev.desc && x.fecha===fechaBusc && Math.abs(parseFloat(x.monto)-ev.monto)<1
+        );
+        if(encontrado){
+          try{ await sheetsWrite('delIngreso',{id:encontrado.id}); }catch(e){}
+          ev.sheetsId = encontrado.id;
+        }
+      }
+      const sid = ev.sheetsId;
+      if(sid){
+        INGRESOS_ALL = (INGRESOS_ALL||[]).filter(x=>x.id!==sid);
+        INGRESOS_CACHE = INGRESOS_CACHE.filter(x=>x.id!==sid);
+        eventosEliminados.add(sid);
+        try{ localStorage.setItem('chanchito_eliminados',JSON.stringify([...eventosEliminados])); }catch(e){}
+      }
+    }
+    eventosIngresos.splice(i,1);
+  } else {
+    const ev = eventosGastos[i];
+    if(ev){
+      if(ev.sheetsId){
+        try{ await sheetsWrite('delGasto',{id:ev.sheetsId}); }catch(e){}
+      } else {
+        const pad=n=>String(n).padStart(2,'0');
+        const fechaBusc='01/'+pad(ev.mes)+'/'+ev.anio;
+        const encontrado = (GASTOS_ALL||[]).find(x=>
+          x.desc===ev.desc && x.fecha===fechaBusc && Math.abs(parseFloat(x.monto)-ev.monto)<1
+        );
+        if(encontrado){
+          try{ await sheetsWrite('delGasto',{id:encontrado.id}); }catch(e){}
+          ev.sheetsId = encontrado.id;
+        }
+      }
+      const sid = ev.sheetsId;
+      if(sid){
+        GASTOS_ALL = (GASTOS_ALL||[]).filter(x=>x.id!==sid);
+        GASTOS_CACHE = GASTOS_CACHE.filter(x=>x.id!==sid);
+        eventosEliminados.add(sid);
+        try{ localStorage.setItem('chanchito_eliminados',JSON.stringify([...eventosEliminados])); }catch(e){}
+      }
+    }
+    eventosGastos.splice(i,1);
+  }
+  renderEventos();
+  renderProj();
+  updateDashboardMetrics();
 }
 
 // ══════ EDITAR / ELIMINAR INGRESOS ══════
@@ -2364,22 +2615,47 @@ async function delIngresoUI(id){
 }
 
 function openEditIngreso(id){
-  const ing = INGRESOS_CACHE.find(x=>x.id===id);
+  const ing = (INGRESOS_ALL||INGRESOS_CACHE).find(x=>x.id===id) || INGRESOS_CACHE.find(x=>x.id===id);
   if(!ing){ toast('Ingreso no encontrado','warn'); return; }
-  const desc  = prompt('Descripción:', ing.descripcion||'');
-  if(desc===null) return;
-  const monto = prompt('Monto:', ing.monto||'');
-  if(monto===null) return;
-  const notas = prompt('Notas:', ing.notas||'');
-  sheetsWrite('editIngreso',{id,descripcion:desc,monto:parseFloat(monto)||0,notas:notas||''})
-    .then(r=>{
-      if(r.ok){
-        const idx=INGRESOS_CACHE.findIndex(x=>x.id===id);
-        if(idx>=0) INGRESOS_CACHE[idx]={...INGRESOS_CACHE[idx],descripcion:desc,monto:parseFloat(monto)||0,notas:notas||''};
-        updateDashboardMetrics();
-        toast('✓ Ingreso actualizado en Sheets','success');
-      }
-    }).catch(e=>toast('❌ '+e.message,'error'));
+  // Cargar datos en el modal
+  document.getElementById('ei-edit-id').value    = id;
+  document.getElementById('ei-edit-desc').value  = ing.descripcion||'';
+  document.getElementById('ei-edit-monto').value = ing.monto||'';
+  document.getElementById('ei-edit-cat').value   = ing.categoria||'Sueldo';
+  document.getElementById('ei-edit-tipo').value  = ing.tipo||'Fijo';
+  document.getElementById('ei-edit-notas').value = ing.notas||'';
+  // Fecha
+  if(ing.fecha){
+    const p = String(ing.fecha).split('/');
+    if(p.length===3) document.getElementById('ei-edit-fecha').value = p[2]+'-'+p[1].padStart(2,'0')+'-'+p[0].padStart(2,'0');
+  }
+  document.getElementById('modal-edit-ingreso').style.display='flex';
+}
+
+async function guardarEditIngreso(){
+  const id    = document.getElementById('ei-edit-id').value;
+  const desc  = document.getElementById('ei-edit-desc').value.trim();
+  const monto = parseFloat(document.getElementById('ei-edit-monto').value);
+  const fecha = document.getElementById('ei-edit-fecha').value;
+  const cat   = document.getElementById('ei-edit-cat').value;
+  const tipo  = document.getElementById('ei-edit-tipo').value;
+  const notas = document.getElementById('ei-edit-notas').value.trim();
+  if(!desc||!monto){ toast('Completá descripción y monto','warn'); return; }
+  const [y,m,d] = fecha.split('-');
+  const fechaFmt = d+'/'+m+'/'+y;
+  try{
+    const r = await sheetsWrite('editIngreso',{id,descripcion:desc,monto,fecha:fechaFmt,categoria:cat,tipo,notas});
+    if(r.ok){
+      const update = x=>({...x,descripcion:desc,monto,fecha:fechaFmt,categoria:cat,tipo,notas});
+      const i1=INGRESOS_CACHE.findIndex(x=>x.id===id);
+      if(i1>=0) INGRESOS_CACHE[i1]=update(INGRESOS_CACHE[i1]);
+      if(INGRESOS_ALL){const i2=INGRESOS_ALL.findIndex(x=>x.id===id);if(i2>=0)INGRESOS_ALL[i2]=update(INGRESOS_ALL[i2]);}
+      document.getElementById('modal-edit-ingreso').style.display='none';
+      renderGastos();
+      updateDashboardMetrics();
+      toast('✓ Ingreso actualizado en Sheets','success');
+    }
+  }catch(e){ toast('❌ '+e.message,'error'); }
 }
 
 // ══════ NUEVO GASTO ══════
@@ -2815,7 +3091,7 @@ function initCharts(){
       labels:['Nov','Dic','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct'],
       datasets:[
         {label:'Ingresos',data:[0,0,0,0,0,0,0,0,0,0,0,0],backgroundColor:'rgba(26,111,181,.5)',borderRadius:5,borderSkipped:false},
-        {label:'Gastos reales',data:[0,0,0,0,0,0,0,0,0,0,0,0],backgroundColor:'rgba(214,58,58,.45)',borderRadius:5,borderSkipped:false},
+        {label:'Gastos',data:[0,0,0,0,0,0,0,0,0,0,0,0],backgroundColor:'rgba(214,58,58,.45)',borderRadius:5,borderSkipped:false},
         {label:'Cuotas futuras',data:[0,0,0,0,0,0,0,0,0,0,0,0],backgroundColor:'rgba(232,168,56,.55)',borderRadius:5,borderSkipped:false,borderDash:[]}
       ]
     },options:dflt
@@ -3392,9 +3668,9 @@ async function impImportar(){
         categoria:   r.categoria,
         monto:       r.monto,
         medio_pago:  r.medio_pago||'Crédito Patagonia MC',
-        asignado_a:  r.asignado_a||'rocio',
+        asignado_a:  r.asignado_a||'agus',
         notas:       r.notas,
-      })), user:'rocio'});
+      })), user:'agus'});
       if(res.ok) ok+=lote.length;
       else { err+=lote.length; console.error(res.error); }
     } catch(e){ err+=lote.length; }
@@ -3620,8 +3896,8 @@ loadDeudas();
 function initPerfil(){
   // Cargar valores actuales
   try{
-    const savedNombre = localStorage.getItem('chanchito_nombre') || 'Rocío';
-    const savedUser   = localStorage.getItem('chanchito_user')   || currentUser || 'rocio';
+    const savedNombre = localStorage.getItem('chanchito_nombre') || 'Agus';
+    const savedUser   = localStorage.getItem('chanchito_user')   || currentUser || 'agus';
     document.getElementById('perfil-nombre').value  = savedNombre;
     document.getElementById('perfil-usuario').value = savedUser;
     document.getElementById('perfil-nombre-display').textContent = savedNombre;
@@ -3693,7 +3969,119 @@ function cambiarContrasena(){
 // Cargar contraseña guardada al iniciar si existe
 // Login directo sin localStorage
 
+
+// Formatea montos: $2.000.000 en lugar de $2000k
+function fmtM(v){
+  return '$'+Math.round(v).toLocaleString('es-AR');
+}
 // ══════ COMPROMISOS FUTUROS POR CUOTAS ══════
+
+// ══════ BALANCE PROYECTADO DASHBOARD ══════
+function renderDashBalanceProj(){
+  const container = document.getElementById('dash-balance-proj');
+  if(!container) return;
+  const now = new Date();
+  const keyActual = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+  const allG = (GASTOS_ALL && GASTOS_ALL.length) ? GASTOS_ALL : GASTOS_CACHE;
+  const ingSrc = (INGRESOS_ALL && INGRESOS_ALL.length) ? INGRESOS_ALL : INGRESOS_CACHE;
+
+  // ── Gastos reales por mes (misma lógica que Proyección) ──
+  const gastPorMes={};
+  allG.forEach(g=>{
+    if(g.id && eventosEliminados.has(g.id)) return;
+    const esProyG = String(g.notas||'').includes('Proyeccion') || g.medio==='Proyectado';
+    if(esProyG){
+      const pad=n=>String(n).padStart(2,'0');
+      const enListaG = eventosGastos.some(ev=>{
+        const f='01/'+pad(ev.mes)+'/'+ev.anio;
+        return (ev.sheetsId&&ev.sheetsId===g.id)||(g.desc===ev.desc&&g.fecha===f);
+      });
+      if(!enListaG) return;
+    }
+    const p=String(g.fecha||'').split('/');
+    if(p.length<3) return;
+    const k=p[2]+'-'+p[1].padStart(2,'0');
+    gastPorMes[k]=(gastPorMes[k]||0)+montoPropio(g);
+  });
+  // Promedio últimos 3 meses completos
+  const gastVals=Object.entries(gastPorMes).filter(([k])=>k<keyActual).sort((a,b)=>a[0]>b[0]?-1:1).slice(0,3).map(x=>x[1]);
+  const gastProm=gastVals.length?Math.round(gastVals.reduce((a,b)=>a+b,0)/gastVals.length):0;
+
+  // ── Ingresos reales por mes (misma lógica que Proyección) ──
+  const ingPorMes={};
+  ingSrc.forEach(i=>{
+    if(i.id && eventosEliminados.has(i.id)) return;
+    const esProyI = String(i.notas||'').includes('Proyeccion') || i.tipo==='Proyectado';
+    if(esProyI){
+      const pad=n=>String(n).padStart(2,'0');
+      const enListaI = eventosIngresos.some(ev=>{
+        const f='01/'+pad(ev.mes)+'/'+ev.anio;
+        return (ev.sheetsId&&ev.sheetsId===i.id)||(i.descripcion===ev.desc&&i.fecha===f);
+      });
+      if(!enListaI) return;
+    }
+    const p=String(i.fecha||'').split('/');
+    if(p.length<3) return;
+    const k=p[2]+'-'+p[1].padStart(2,'0');
+    ingPorMes[k]=(ingPorMes[k]||0)+parseFloat(i.monto||0);
+  });
+  // Promedio últimos 3 meses completos
+  const ingVals=Object.entries(ingPorMes).filter(([k])=>k<keyActual).sort((a,b)=>a[0]>b[0]?-1:1).slice(0,3).map(x=>x[1]);
+  const ingProm=ingVals.length?Math.round(ingVals.reduce((a,b)=>a+b,0)/ingVals.length):0;
+
+  // ── Cuotas futuras por mes (solo >= mes actual) ──
+  const cuotasPorMes={};
+  const mesActualBal = new Date(now.getFullYear(), now.getMonth(), 1);
+  allG.filter(g=>{
+    const ca=parseInt(g.cuota_actual||0), ct=parseInt(g.total_cuotas||0);
+    return ca>0&&ct>0&&ca<ct;
+  }).forEach(g=>{
+    const ca=parseInt(g.cuota_actual||0),ct=parseInt(g.total_cuotas||0);
+    const monto=Math.abs(parseFloat(g.monto)||0);
+    const p=String(g.fecha||'').split('/');
+    if(p.length<3) return;
+    const mesBase=new Date(parseInt(p[2]),parseInt(p[1])-1,1);
+    const fUltima = new Date(mesBase.getFullYear(), mesBase.getMonth()+(ct-ca), 1);
+    if(fUltima < mesActualBal) return; // cuota ya termino
+    for(let n=ca+1;n<=ct;n++){
+      const d=new Date(mesBase.getFullYear(),mesBase.getMonth()+(n-ca),1);
+      if(d < mesActualBal) continue;
+      const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
+      cuotasPorMes[k]=(cuotasPorMes[k]||0)+monto;
+    }
+  });
+
+  // ── Renderizar 12 meses futuros ──
+  let html='';
+  for(let i=1;i<=12;i++){
+    const d=new Date(now.getFullYear(),now.getMonth()+i,1);
+    const mm=String(d.getMonth()+1).padStart(2,'0');
+    const k=d.getFullYear()+'-'+mm;
+    const evMes=d.getMonth()+1, evAnio=d.getFullYear();
+
+    // Ingresos: real si existe, sino promedio + eventos
+    const ingReal = ingPorMes[k];
+    const ingEvs = eventosIngresos.filter(e=>(e.anio||now.getFullYear())===evAnio&&e.mes===evMes).reduce((s,e)=>s+e.monto,0);
+    const totalIng = (ingReal!==undefined ? ingReal : ingProm) + ingEvs;
+
+    // Gastos: real si existe, sino promedio + cuotas + eventos
+    const gastReal = gastPorMes[k];
+    const gastoCuotas = cuotasPorMes[k]||0;
+    const gastoEvs = eventosGastos.filter(e=>(e.anio||now.getFullYear())===evAnio&&e.mes===evMes).reduce((s,e)=>s+e.monto,0);
+    const totalGas = (gastReal!==undefined ? gastReal : gastProm) + gastoCuotas + gastoEvs;
+
+    const bal=totalIng-totalGas;
+    const balColor=bal>=0?'var(--green)':'var(--red)';
+    const isFirst=i===1;
+    html+=`<div style="background:var(--bg3);border:1px solid ${isFirst?'var(--accent)':'var(--border)'};border-radius:var(--r);padding:10px 8px;text-align:center">
+      <div style="font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;margin-bottom:4px">${MESES[d.getMonth()]} ${d.getFullYear()}</div>
+      <div style="font-size:12px;font-weight:700;color:${balColor}">${bal>=0?'+':''}${Math.round(Math.abs(bal)).toLocaleString('es-AR')}</div>
+      <div style="font-size:9px;color:var(--text3);margin-top:2px">↑$${Math.round(totalIng/1000).toLocaleString('es-AR')}k ↓$${Math.round(totalGas/1000).toLocaleString('es-AR')}k</div>
+    </div>`;
+  }
+  container.innerHTML=html;
+}
+
 function renderCompromisosFuturos(){
   const allG = (GASTOS_ALL && GASTOS_ALL.length) ? GASTOS_ALL : GASTOS_CACHE;
   const now = new Date();
@@ -3867,14 +4255,14 @@ async function guardarIngreso(){
   try{
     const resp = await sheetsWrite('addIngreso',{
       fecha: fechaFmt, descripcion: desc, categoria: cat,
-      monto: monto, persona: 'Rocío', tipo: tipo,
+      monto: monto, persona: 'Agus', tipo: tipo,
       recurrente: 'No', notas: notas
     });
     if(resp && resp.ok){
       INGRESOS_CACHE.unshift({
         id: resp.id||'i_'+Date.now(), fecha: fechaFmt,
         descripcion: desc, categoria: cat, monto: monto,
-        persona: 'Rocío', tipo: tipo, recurrente: 'No', notas: notas
+        persona: 'Agus', tipo: tipo, recurrente: 'No', notas: notas
       });
       document.getElementById('modal-ingreso').style.display = 'none';
       updateDashboardMetrics();
@@ -3889,6 +4277,52 @@ async function guardarIngreso(){
 }
 
 </script>
+  <!-- ════ MODAL EDITAR INGRESO ════ -->
+  <div id="modal-edit-ingreso" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:600;align-items:center;justify-content:center">
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:28px;width:480px;max-width:95vw;box-shadow:0 20px 60px rgba(0,0,0,.15)">
+      <div style="font-size:15px;font-weight:700;margin-bottom:4px">✏️ Editar ingreso</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:18px">Los cambios se guardan en Sheets</div>
+      <input type="hidden" id="ei-edit-id">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="grid-column:1/-1"><label class="fl">Descripción</label>
+          <input class="fi" id="ei-edit-desc" placeholder="Ej. Honorarios Mayo...">
+        </div>
+        <div><label class="fl">Monto</label>
+          <input class="fi" id="ei-edit-monto" type="number" placeholder="0" min="0">
+        </div>
+        <div><label class="fl">Fecha</label>
+          <input class="fi" id="ei-edit-fecha" type="date">
+        </div>
+        <div><label class="fl">Categoría</label>
+          <select class="fs" id="ei-edit-cat">
+            <option value="Sueldo">Sueldo</option>
+            <option value="Freelance">Freelance</option>
+            <option value="Honorarios">Honorarios</option>
+            <option value="Alquiler">Alquiler</option>
+            <option value="Inversión">Inversión</option>
+            <option value="Proyectado">Proyectado</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div><label class="fl">Tipo</label>
+          <select class="fs" id="ei-edit-tipo">
+            <option value="Fijo">Fijo</option>
+            <option value="Variable">Variable</option>
+            <option value="Extra">Extra</option>
+            <option value="Proyectado">Proyectado</option>
+          </select>
+        </div>
+        <div style="grid-column:1/-1"><label class="fl">Notas</label>
+          <input class="fi" id="ei-edit-notas" placeholder="Notas adicionales...">
+        </div>
+      </div>
+      <div style="display:flex;gap:9px;margin-top:18px">
+        <button class="btn btn-primary" onclick="guardarEditIngreso()">💾 Guardar cambios</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('modal-edit-ingreso').style.display='none'">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ════ MODAL NUEVO INGRESO ════ -->
   <div id="modal-ingreso" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:600;align-items:center;justify-content:center">
     <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:28px;width:460px;max-width:95vw;box-shadow:0 20px 60px rgba(0,0,0,.15)">
