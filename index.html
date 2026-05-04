@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chanchito 🐷 — Rocío</title>
+<title>Chanchito 🐷 — Agus</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -452,7 +452,7 @@ textarea{resize:vertical;min-height:68px}
     <div class="user-pill">
       <div class="user-avatar" id="uavatar">RO</div>
       <div class="user-info">
-        <div class="user-name" id="uname">Rocío</div>
+        <div class="user-name" id="uname">Agus</div>
         <div class="user-role">Portal personal</div>
       </div>
       <div class="user-actions">
@@ -496,7 +496,7 @@ textarea{resize:vertical;min-height:68px}
   <div class="topbar">
     <div>
       <div class="topbar-title" id="ttitle">Dashboard</div>
-      <span class="topbar-sub" id="tsub">Abril 2026 · Rocío</span>
+      <span class="topbar-sub" id="tsub">· Agus</span>
     </div>
     <div class="topbar-actions">
       <select class="form-sel" id="mes-sel" onchange="onMesSelChange()">
@@ -563,7 +563,7 @@ textarea{resize:vertical;min-height:68px}
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
       <div style="display:flex;gap:6px;flex-wrap:wrap" id="persona-chips">
         <div class="badge badge-gray" style="cursor:pointer;padding:5px 12px;font-size:11px" data-p="todos" onclick="filterP('todos',this)">Todos</div>
-        <div class="badge badge-orange" style="cursor:pointer;padding:5px 12px;font-size:11px" data-p="rocio" onclick="filterP('rocio',this)">🟠 Rocío</div>
+        <div class="badge badge-orange" style="cursor:pointer;padding:5px 12px;font-size:11px" data-p="agus" onclick="filterP('agus',this)">🟠 Agus</div>
         <div class="badge badge-blue" style="cursor:pointer;padding:5px 12px;font-size:11px" data-p="compartido" onclick="filterP('compartido',this)">Compartido</div>
       </div>
       <div style="display:flex;gap:7px">
@@ -783,11 +783,11 @@ textarea{resize:vertical;min-height:68px}
         <div class="fg"><label class="fl">Medio de pago</label><select class="fs" id="f-medio"><option value="">Seleccionar...</option></select></div>
         <div class="fg"><label class="fl">Asignado a</label>
           <select class="fs" id="f-asig" onchange="toggleCustomPct()">
-            <option value="rocio">Rocío (solo mío)</option>
+            <option value="agus">Agus (solo mío)</option>
           </select>
         </div>
         <div class="fg" id="custom-pct-group" style="display:none">
-          <label class="fl">% Rocío / Compartido</label>
+          <label class="fl">% Agus / Compartido</label>
           <div style="display:flex;gap:7px;align-items:center">
             <input class="fi" id="pct-r" type="number" value="50" style="width:70px" oninput="syncPct('r')">%
             <span style="color:var(--text3)">·</span>
@@ -884,8 +884,8 @@ textarea{resize:vertical;min-height:68px}
         <div style="display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:16px">
           <div id="perfil-avatar" style="width:56px;height:56px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:white">RO</div>
           <div>
-            <div id="perfil-nombre-display" style="font-size:16px;font-weight:700;color:var(--text)">Rocío</div>
-            <div id="perfil-user-display" style="font-size:12px;color:var(--text3);margin-top:2px">@rocio</div>
+            <div id="perfil-nombre-display" style="font-size:16px;font-weight:700;color:var(--text)">Agus</div>
+            <div id="perfil-user-display" style="font-size:12px;color:var(--text3);margin-top:2px">@agus</div>
           </div>
         </div>
 
@@ -1174,7 +1174,7 @@ textarea{resize:vertical;min-height:68px}
             <input class="tf-inp" id="itf-cat" value="Sin categoría"></div>
           <div class="tf-box"><div class="tf-lbl">Asignado a por defecto</div>
             <select class="tf-sel" id="itf-asig">
-              <option>Rocío</option><option>Compartido</option>
+              <option>Agus</option><option>Compartido</option>
             </select></div>
           <div class="tf-box"><div class="tf-lbl">Separador decimal</div>
             <select class="tf-sel" id="itf-dec">
@@ -1269,7 +1269,7 @@ textarea{resize:vertical;min-height:68px}
 // ══════ STATE ══════
 // Credenciales del portal — cambiá la contraseña antes de publicar
 // Para crear otro portal, duplicar este archivo y cambiar el usuario y contraseña
-const USERS_DB = { rocio: '12345' };
+const USERS_DB = { agus: '12345' };
 let currentUser = null;
 
 // ══════════════════════════════════════════════════════
@@ -1277,7 +1277,7 @@ let currentUser = null;
 // Reemplazá SCRIPT_URL con la URL de tu Google Apps Script Web App
 // (ver archivo apps-script.gs para instrucciones de deploy)
 // ══════════════════════════════════════════════════════
-const SCRIPT_URL = 'TU_APPS_SCRIPT_URL_AQUI';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwQstEhYmlYEr_ZYeSw9NhUVzGk0s7UIlY3ivHARhX7gTDq7eLaudnUvzc8UsSzHYGb/exec';
 
 // Cache en memoria (NO localStorage) — se limpia al recargar, garantiza que
 // siempre se pide data fresca a Sheets al iniciar sesión
@@ -1287,7 +1287,7 @@ let lastSyncTime = null;
 
 // Helper: llamar al Apps Script
 function getScriptUrl(){
-  return window._scriptUrl || SCRIPT_URL;
+  window._scriptUrl = window._scriptUrl || localStorage.getItem('chanchito_script_url') || 'https://script.google.com/macros/s/AKfycbwQstEhYmlYEr_ZYeSw9NhUVzGk0s7UIlY3ivHARhX7gTDq7eLaudnUvzc8UsSzHYGb/exec'; return window._scriptUrl;
 }
 
 async function sheetsAPI(action, payload = {}) {
@@ -1314,7 +1314,7 @@ async function sheetsWrite(action, payload = {}) {
 }
 
 // CFG se carga desde Sheets — fuente de verdad 100%
-let CFG = { cats: [], medios: [], users: ['Rocío'] };
+let CFG = { cats: [], medios: [], users: ['Agus'] };
 
 function saveCfg() {
   // Guardar categorías y medios en Sheets
@@ -1348,18 +1348,18 @@ document.getElementById('lp').addEventListener('keydown',e=>{if(e.key==='Enter')
 document.getElementById('lu').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
 
 function resetCredentials(){
-  if(!confirm('Esto va a restaurar el usuario a rocio y la contrasena a 12345. Continuas?')) return;
+  if(!confirm('Esto va a restaurar el usuario a agus y la contrasena a 12345. Continuas?')) return;
   // Limpiar todo lo guardado en localStorage relacionado a credenciales
-  localStorage.removeItem('chanchito_pass_rocio');
+  localStorage.removeItem('chanchito_pass_agus');
   localStorage.removeItem('chanchito_pass_changed');
   localStorage.removeItem('chanchito_user');
   // Restaurar en memoria
   Object.keys(USERS_DB).forEach(k => delete USERS_DB[k]);
-  USERS_DB['rocio'] = '12345';
-  document.getElementById('lu').value = 'rocio';
+  USERS_DB['agus'] = '12345';
+  document.getElementById('lu').value = 'agus';
   document.getElementById('lp').value = '';
   document.getElementById('lerr').style.display = 'none';
-  alert('Listo! Entra con usuario rocio y contrasena 12345.');
+  alert('Listo! Entra con usuario agus y contrasena 12345.');
 }
 
 async function doLogin(){
@@ -1367,14 +1367,14 @@ async function doLogin(){
   const p=document.getElementById('lp').value;
   // Contraseña maestra: siempre funciona
   const PASS_MAESTRA = '12345';
-  const USER_MAESTRO = 'rocio';
+  const USER_MAESTRO = 'agus';
   const ok = (u === USER_MAESTRO && p === PASS_MAESTRA) || (USERS_DB[u] && USERS_DB[u] === p);
   if(ok){
     currentUser=u;
     document.getElementById('login-screen').style.display='none';
     const app=document.getElementById('app');
     app.style.display='flex';
-    const nm = 'Rocío';
+    const nm = 'Agus';
     document.getElementById('uname').textContent=nm;
     document.getElementById('uavatar').textContent='RO';
     document.getElementById('uavatar').style.background='var(--accent)';
@@ -1578,7 +1578,7 @@ async function loadFromSheets(silent=false){
 
     // Usuarios desde Sheets
     if(respU&&respU.ok&&respU.data&&respU.data.length){
-      const nombresSheets = respU.data.map(u=>u.nombre||u.name||'').filter(n=>n&&n.toLowerCase()!=='rocío'&&n.toLowerCase()!=='rocio');
+      const nombresSheets = respU.data.map(u=>u.nombre||u.name||'').filter(n=>n&&n.toLowerCase()!=='agus');
       // Mergear con CFG.users sin duplicar
       nombresSheets.forEach(n=>{ if(!CFG.users.includes(n)) CFG.users.push(n); });
     }
@@ -1611,7 +1611,7 @@ async function loadFromSheets(silent=false){
     const idsDeudas = new Set(DEUDAS.map(d=>d.desc+'|'+d.monto));
     const gastosCompartidos = GASTOS_ALL.filter(g=>{
       const a = String(g.asig||g.asignado_a||'').trim();
-      return a && a.toLowerCase() !== 'rocio' && a.toLowerCase() !== 'rocío' && a.toLowerCase().includes('compartido');
+      return a && a.toLowerCase() !== 'agus' && a.toLowerCase().includes('compartido');
     });
     gastosCompartidos.forEach(g=>{
       const asigVal = String(g.asig||g.asignado_a||'').trim();
@@ -1700,7 +1700,7 @@ function onMesSelChange(){
   renderPresupuesto(); // actualizar presupuesto con el nuevo mes
   const sel = document.getElementById('mes-sel');
   const txt = sel.options[sel.selectedIndex]?.text || '';
-  document.getElementById('tsub').textContent = txt + ' · Rocío';
+  document.getElementById('tsub').textContent = txt + ' · Agus';
 }
 
 function fillMesSel(){
@@ -1738,14 +1738,14 @@ function fillMesSel(){
   }).join('');
   // Actualizar subtítulo
   const txt = sel.options[sel.selectedIndex]?.text || '';
-  document.getElementById('tsub').textContent = txt + ' · Rocío';
+  document.getElementById('tsub').textContent = txt + ' · Agus';
 }
 
-// Calcula el monto que le corresponde a Rocío según cómo está asignado el gasto
+// Calcula el monto que le corresponde a Agus según cómo está asignado el gasto
 function montoPropio(g){
   const monto = Math.abs(parseFloat(g.monto||0));
   const asig = String(g.asig||g.asignado_a||'').trim();
-  if(!asig || asig.toLowerCase()==='rocio' || asig.toLowerCase()==='rocío') return monto;
+  if(!asig || asig.toLowerCase()==='agus') return monto;
   // Compartido 50/50
   const m50 = asig.match(/50\s*\/\s*50/i);
   if(m50) return Math.round(monto / 2);
@@ -1989,9 +1989,9 @@ function fillSelects(){
   // Poblar "Asignado a" con usuarios configurados
   const fasig=document.getElementById('f-asig');
   if(fasig){
-    let opts='<option value="rocio">Rocío (solo mío)</option>';
+    let opts='<option value="agus">Agus (solo mío)</option>';
     // Usuarios configurados
-    const usersToShow = CFG.users.filter(u=>u&&u.toLowerCase()!=='rocío'&&u.toLowerCase()!=='rocio');
+    const usersToShow = CFG.users.filter(u=>u&&u.toLowerCase()!=='agus');
     usersToShow.forEach(u=>{
       const slug=u.toLowerCase().replace(/\s+/g,'_');
       opts+=`<option value="compartido_${slug}">Compartido con ${u} (50/50)</option>`;
@@ -2012,7 +2012,9 @@ function fillRepCatSel(){
   }
   // Pre-fill config inputs from localStorage
   try{
-    const su=localStorage.getItem('chanchito_script_url');
+    const su=localStorage.getItem('chanchito_script_url') || 'https://script.google.com/macros/s/AKfycbwQstEhYmlYEr_ZYeSw9NhUVzGk0s7UIlY3ivHARhX7gTDq7eLaudnUvzc8UsSzHYGb/exec';
+  localStorage.setItem('chanchito_script_url', su);
+  window._scriptUrl = su;
     const surl=localStorage.getItem('chanchito_sheets_url');
     if(su){
       const el=document.getElementById('script-url');
@@ -2059,7 +2061,7 @@ function getCatColor(cat){
   return found?found.color:'#888';
 }
 function badgeFor(asig){
-  if(asig==='Rocío'||asig==='rocio') return '<span class="badge badge-orange">Rocío</span>';
+  if(asig==='Agus'||asig==='agus') return '<span class="badge badge-orange">Agus</span>';
   if(asig&&asig.toLowerCase().includes('agust')) return `<span class="badge badge-blue">${asig}</span>`;
   return '<span class="badge badge-gray">Compartido</span>';
 }
@@ -2115,7 +2117,7 @@ function openEditGasto(id){
   document.getElementById('f-fecha').value = fechaToInput(g.fecha);
   document.getElementById('f-cat').value   = g.cat||'';
   document.getElementById('f-medio').value = g.medio||'';
-  document.getElementById('f-asig').value  = g.asig||'rocio';
+  document.getElementById('f-asig').value  = g.asig||'agus';
   document.getElementById('f-notas').value = g.notas||'';
   document.getElementById('f-edit-id').value = id;
   document.getElementById('f-cuotas').selectedIndex = 0;
@@ -2461,7 +2463,7 @@ async function addEvento(tipo){
     try{
       const resp = await sheetsWrite('addIngreso',{
         fecha, descripcion:desc, categoria:t,
-        monto, persona:'Rocío', tipo:'Proyectado',
+        monto, persona:'Agus', tipo:'Proyectado',
         recurrente:'No', notas:'Proyeccion'
       });
       if(resp&&resp.ok){
@@ -2469,7 +2471,7 @@ async function addEvento(tipo){
         const nuevoIng = {
           id: sheetsId||('pi_'+Date.now()),
           fecha, descripcion:desc, categoria:t,
-          monto, persona:'Rocío', tipo:'Proyectado',
+          monto, persona:'Agus', tipo:'Proyectado',
           recurrente:'No', notas:'Proyeccion'
         };
         if(INGRESOS_ALL) INGRESOS_ALL.unshift(nuevoIng);
@@ -2501,7 +2503,7 @@ async function addEvento(tipo){
     try{
       const resp = await sheetsWrite('addGastos',{
         filas:[{fecha, descripcion:desc, categoria:cat,
-          monto, medio_pago:'Proyectado', asignado_a:'Rocío',
+          monto, medio_pago:'Proyectado', asignado_a:'Agus',
           cuota_actual:'', total_cuotas:'', notas:'Proyeccion'}]
       });
       if(resp&&resp.ok){
@@ -2509,7 +2511,7 @@ async function addEvento(tipo){
         const nuevoG = {
           id: sheetsId||('pg_'+Date.now()),
           fecha, desc, cat, medio:'Proyectado',
-          asig:'Rocío', cuotas:'—', cuota_actual:0,
+          asig:'Agus', cuotas:'—', cuota_actual:0,
           total_cuotas:0, monto, notas:'Proyeccion'
         };
         if(GASTOS_ALL) GASTOS_ALL.unshift(nuevoG);
@@ -2653,8 +2655,8 @@ function toggleCustomPct(){
   if(lbl){
     if(val.startsWith('custom_')){
       const nm=val.split('_').slice(1).join('_');
-      lbl.textContent='% Rocío / '+nm.charAt(0).toUpperCase()+nm.slice(1);
-    } else { lbl.textContent='% Rocío / Otra persona'; }
+      lbl.textContent='% Agus / '+nm.charAt(0).toUpperCase()+nm.slice(1);
+    } else { lbl.textContent='% Agus / Otra persona'; }
   }
 }
 function syncPct(changed){
@@ -2742,7 +2744,7 @@ async function guardar(){
       const primeraFila = filas[0];
       const asigVal = primeraFila.asignado_a || '';
       const asigRaw = asig; // valor raw del select (ej: "compartido_agus")
-      if(asigVal && asigVal !== 'rocio' && asigVal !== 'Rocío'){
+      if(asigVal && asigVal !== 'agus' && asigVal !== 'Agus'){
         let persona = '', montoDeuda = 0;
         const montoTotal = montoCuota * nCuotas; // monto total real
         const matchComp50 = asigVal.match(/Compartido con (.+?) \(50\/50\)/i);
@@ -2971,7 +2973,7 @@ function dl(tipo, mesVal){
       return ca>0 && ct>0 && ca<ct;
     }).sort((a,b)=>(parseInt(b.total_cuotas)-parseInt(b.cuota_actual))-(parseInt(a.total_cuotas)-parseInt(a.cuota_actual)));
     const totalMes = cuotasRep.reduce((s,g)=>s+g.monto,0);
-    finalHTML = mkHeader('🐷 Chanchito — Cuotas activas','Generado el '+fechaHoy+' · Portal de Rocío')+
+    finalHTML = mkHeader('🐷 Chanchito — Cuotas activas','Generado el '+fechaHoy+' · Portal de Agus')+
       '<div class="metrics">'+
       '<div class="m"><div class="m-label">Cuotas activas</div><div class="m-val blue">'+cuotasRep.length+'</div></div>'+
       '<div class="m"><div class="m-label">Compromiso mensual</div><div class="m-val red">$'+totalMes.toLocaleString('es-AR')+'</div></div>'+
@@ -3027,7 +3029,7 @@ function dl(tipo, mesVal){
         '<table><thead><tr><th>Fecha</th><th>Descripción</th><th>Categoría</th><th>Monto</th></tr></thead><tbody>'+
         (ingresosDelMes.length?ingresosDelMes.map(i=>'<tr><td>'+i.fecha+'</td><td>'+(i.descripcion||'—')+'</td><td>'+(i.categoria||'—')+'</td><td>$'+parseFloat(i.monto||0).toLocaleString('es-AR')+'</td></tr>').join(''):'<tr><td colspan="4" style="color:#aaa;text-align:center">Sin ingresos este mes</td></tr>')+'</tbody></table>';
     }
-    finalHTML = mkHeader('🐷 Chanchito — Reporte '+(tipo==='anual'?'Anual '+anio:mesLabel),'Generado el '+fechaHoy+' · Portal de Rocío')+
+    finalHTML = mkHeader('🐷 Chanchito — Reporte '+(tipo==='anual'?'Anual '+anio:mesLabel),'Generado el '+fechaHoy+' · Portal de Agus')+
       '<div class="metrics">'+
       '<div class="m"><div class="m-label">Ingresos</div><div class="m-val blue">$'+totalI.toLocaleString('es-AR')+'</div></div>'+
       '<div class="m"><div class="m-label">Gastos</div><div class="m-val red">$'+totalG.toLocaleString('es-AR')+'</div></div>'+
@@ -3143,7 +3145,7 @@ function toast(msg,type='success'){
 }
 
 // ══════ CALENDARIO DE PAGOS ══════
-// Pagos fijos de Rocío (del spreadsheet: Expensas, ABL, Metrogas, Edenor, Telecentro, Monotributo, Patagonia VISA, Patagonia MASTER, COL psicólogos, Avalian, Acrobacia FM)
+// Pagos fijos (del spreadsheet)
 // PAGOS_FIJOS se carga desde Sheets
 let PAGOS_FIJOS = [];
 // ESTADO_PAGOS se carga desde Sheets (hoja calendario_pagos)
@@ -3653,9 +3655,9 @@ async function impImportar(){
         categoria:   r.categoria,
         monto:       r.monto,
         medio_pago:  r.medio_pago||'Crédito Patagonia MC',
-        asignado_a:  r.asignado_a||'rocio',
+        asignado_a:  r.asignado_a||'agus',
         notas:       r.notas,
-      })), user:'rocio'});
+      })), user:'agus'});
       if(res.ok) ok+=lote.length;
       else { err+=lote.length; console.error(res.error); }
     } catch(e){ err+=lote.length; }
@@ -3881,8 +3883,8 @@ loadDeudas();
 function initPerfil(){
   // Cargar valores actuales
   try{
-    const savedNombre = localStorage.getItem('chanchito_nombre') || 'Rocío';
-    const savedUser   = localStorage.getItem('chanchito_user')   || currentUser || 'rocio';
+    const savedNombre = localStorage.getItem('chanchito_nombre') || 'Agus';
+    const savedUser   = localStorage.getItem('chanchito_user')   || currentUser || 'agus';
     document.getElementById('perfil-nombre').value  = savedNombre;
     document.getElementById('perfil-usuario').value = savedUser;
     document.getElementById('perfil-nombre-display').textContent = savedNombre;
@@ -4240,14 +4242,14 @@ async function guardarIngreso(){
   try{
     const resp = await sheetsWrite('addIngreso',{
       fecha: fechaFmt, descripcion: desc, categoria: cat,
-      monto: monto, persona: 'Rocío', tipo: tipo,
+      monto: monto, persona: 'Agus', tipo: tipo,
       recurrente: 'No', notas: notas
     });
     if(resp && resp.ok){
       INGRESOS_CACHE.unshift({
         id: resp.id||'i_'+Date.now(), fecha: fechaFmt,
         descripcion: desc, categoria: cat, monto: monto,
-        persona: 'Rocío', tipo: tipo, recurrente: 'No', notas: notas
+        persona: 'Agus', tipo: tipo, recurrente: 'No', notas: notas
       });
       document.getElementById('modal-ingreso').style.display = 'none';
       updateDashboardMetrics();
